@@ -195,11 +195,6 @@ module.exports = {
     //        module:"localfilesystem"
     //    },
     //},
-    contextStorage: {
-		storeInFile: { module: "localfilesystem"},
-    	default    : { module: "memory" }
-    },
-
 
     // Configure the logging output
     logging: {
