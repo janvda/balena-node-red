@@ -1,4 +1,4 @@
-FROM nodered/node-red:1.0.3-2-10-arm32v7
+FROM nodered/node-red:1.0.4-12-arm32v7
 
 ######### Changing to root as below commands should be run as root #############
 
