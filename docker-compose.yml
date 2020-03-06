@@ -7,7 +7,7 @@ services:
     volumes:
       - 'node-red-data:/data'
     restart: always
-    privileged: true
+    # privileged: true
     labels:
       io.balena.features.supervisor-api: '1'
     ports:

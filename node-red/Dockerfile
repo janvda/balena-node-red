@@ -17,16 +17,6 @@ RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 ######### Changing back to node-red user #####################
 USER node-red
 
-RUN npm install node-red-dashboard
-RUN npm install node-red-contrib-credentials
-RUN npm install node-red-contrib-fs-ops
-RUN npm install node-red-node-email
-
-# install my version of node-red-contrib-balena that is extended with extra nodes to start/stop/restart service
-# a node to retrieve the state of all services.
-RUN npm install janvda/node-red-contrib-balena.git#service_start_stop_nodes
-RUN npm install janvda/node-red-contrib-google-photos
-
 COPY ./settings.js /data/settings.js
 COPY ./entrypoint.sh .
 
