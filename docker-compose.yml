@@ -12,19 +12,5 @@ services:
       io.balena.features.supervisor-api: '1'
     ports:
       - 80:1880  # will make that the balena public URL maps to the node-red editor.
-  pigpiod:
-    build: ./pigpiod
-    restart: always
-    privileged: true
-    cap_add:
-      - SYS_RAWIO  # not sure if this is really needed
-    devices:
-      # not sure if all below options are really needed.
-      - "/dev/mem:/dev/mem"
-      - "/dev/gpiomem:/dev/gpiomem"
-      - "/dev/i2c-1:/dev/i2c-1"
-    ports:
-      # this is only needed in case applications not running on this device also want to connect to
-      # this pigpiod daemon.
-      - 8888:8888  
+
 
