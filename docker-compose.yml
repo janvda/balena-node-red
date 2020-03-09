@@ -12,5 +12,14 @@ services:
       io.balena.features.supervisor-api: '1'
     ports:
       - 80:1880  # will make that the balena public URL maps to the node-red editor.
-
+  wifi-connect:
+    # see https://github.com/balena-io/wifi-connect#balenaos-multicontainer-app
+    build: ./wifi-connect
+    network_mode: "host"
+    labels:
+      io.balena.features.dbus: '1'
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
 
